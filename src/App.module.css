@@ -1,0 +1,13 @@
+#main {
+  display: flex;
+  padding-left: 20px;
+  /* overflow: hidden; */
+}
+
+.main-content {
+  flex: 0 0 70%;
+}
+
+section {
+  margin-bottom: 100px;
+}
