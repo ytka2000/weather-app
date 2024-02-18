@@ -1,0 +1,59 @@
+.trips-list {
+  display: flex;
+  gap: 75px;
+  list-style: none;
+}
+
+.trip-card {
+  font-size: 0;
+}
+
+.trip-card:hover {
+  cursor: pointer;
+  box-shadow: var(--light-blue) 0px 8px 24px;
+}
+
+.trip-card[data-selected="true"] {
+  box-shadow: var(--medium-blue) 0px 8px 24px;
+}
+
+.trip-card:hover .trip-card-description {
+  border: solid 2px var(--light-blue);
+  border-top: 0;
+}
+
+.trip-card img {
+  width: 250px;
+}
+
+.trip-card-description {
+  font-size: 16px;
+  border: solid 2px var(--light-grey);
+  border-top: 0;
+  padding: 20px;
+}
+
+.trip-card-city {
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.trip-card-period {
+  color: var(--grey);
+}
+
+.new-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  font-size: 1.5rem;
+  background-color: var(--light-grey);
+}
+
+.new-card:hover {
+  cursor: pointer;
+  box-shadow: var(--grey) 0px 15px 20px -5px, var(--grey) 0px 10px 10px -5px;
+}

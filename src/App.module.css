@@ -1,7 +1,6 @@
 #main {
   display: flex;
-  padding-left: 20px;
-  /* overflow: hidden; */
+  padding-left: 50px;
 }
 
 .main-content {

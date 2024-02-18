@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { TripsProvider } from "./store/TripsContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <TripsProvider>
     <App />
-  </React.StrictMode>
+  </TripsProvider>
+  // </React.StrictMode>
 );
