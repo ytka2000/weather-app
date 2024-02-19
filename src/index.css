@@ -5,9 +5,13 @@
 
 :root {
   --light-grey: #f1f3f4;
+  --light-grey-rgb: rgb(241, 243, 244);
   --grey: #9aa0a6;
+  --grey-rgb: rgb(154, 160, 166);
   --light-blue: #d2e3fc;
+  --light-blue-rgb: rgb(210, 227, 252);
   --medium-blue: #4285f4;
+  --medium-blue-rgb: rgb(66, 103, 210);
 }
 
 body {
