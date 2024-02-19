@@ -30,8 +30,11 @@ const TripsProvider = ({ children }) => {
 
   const tripsState = {
     trips,
-    addTrip: () => {
-      setTrips([...initialTrips, ...initialTrips]);
+    addTrip: (trip) => {
+      setTrips((prevTrips) => [
+        ...prevTrips,
+        { ...trip, id: uuid(), image: BerlinImage },
+      ]);
     },
   };
 

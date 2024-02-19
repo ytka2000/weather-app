@@ -1,8 +1,8 @@
 import styles from "./trips.module.css";
 
-const NewTrip = () => {
+const NewTrip = ({ onClick }) => {
   return (
-    <li className={styles["new-card"]}>
+    <li className={styles["new-card"]} onClick={onClick}>
       <p>
         <strong>+</strong>
       </p>

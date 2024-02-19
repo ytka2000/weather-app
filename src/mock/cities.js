@@ -49,3 +49,8 @@ export const cities = [
   "London",
   "Vatican City",
 ];
+
+export const citiesWithId = cities.map((city) => ({
+  id: city.replace(/\s+/g, "").toLowerCase(),
+  value: city,
+}));

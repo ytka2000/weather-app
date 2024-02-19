@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { TripsContext } from "../../store/TripsContext";
 import NewTrip from "./NewTrip";
+import CreateTripModal from "../CreateTripModal";
 import formatDate from "../../utils/formatDate";
 
 import styles from "./trips.module.css";
 
 const Trips = () => {
   const { trips } = useContext(TripsContext);
+  const [showModal, setShowModal] = useState(false);
 
   const handleCardSelect = () => {
     console.log("card selected!");
@@ -31,7 +33,11 @@ const Trips = () => {
             </div>
           </li>
         ))}
-        <NewTrip />
+        <NewTrip onClick={() => setShowModal(true)} />
+        <CreateTripModal
+          isOpen={showModal}
+          closeModal={() => setShowModal(false)}
+        />
       </ul>
     </section>
   );
