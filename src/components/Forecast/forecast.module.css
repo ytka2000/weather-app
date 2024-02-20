@@ -1,0 +1,17 @@
+.forecast-items {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.forecast-items li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.weekday {
+  color: var(--grey);
+}
