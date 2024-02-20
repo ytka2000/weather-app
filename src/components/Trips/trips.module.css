@@ -13,13 +13,13 @@
   box-shadow: var(--light-blue) 0px 8px 24px;
 }
 
-.trip-card[data-selected="true"] {
-  box-shadow: var(--medium-blue) 0px 8px 24px;
-}
-
 .trip-card:hover .trip-card-description {
   border: solid 2px var(--light-blue);
   border-top: 0;
+}
+
+.trip-card[data-selected="true"] {
+  box-shadow: var(--medium-blue) 0px 8px 24px;
 }
 
 .trip-card img {

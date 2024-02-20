@@ -22,19 +22,26 @@ const initialTrips = [
 
 const TripsContext = createContext({
   trips: initialTrips,
+  selectedTripId: initialTrips[0].id,
   addTrip: (trip) => {},
+  setSelectedTrip: (id) => {},
 });
 
 const TripsProvider = ({ children }) => {
   const [trips, setTrips] = useState(initialTrips);
+  const [selectedTripId, setSelectedTripId] = useState(trips[0].id);
 
   const tripsState = {
     trips,
+    selectedTripId: selectedTripId,
     addTrip: (trip) => {
       setTrips((prevTrips) => [
         ...prevTrips,
         { ...trip, id: uuid(), image: BerlinImage },
       ]);
+    },
+    setSelectedTrip: (id) => {
+      setSelectedTripId(id);
     },
   };
 

@@ -8,12 +8,8 @@ import formatDate from "../../utils/formatDate";
 import styles from "./trips.module.css";
 
 const Trips = () => {
-  const { trips } = useContext(TripsContext);
+  const { trips, selectedTripId, setSelectedTrip } = useContext(TripsContext);
   const [showModal, setShowModal] = useState(false);
-
-  const handleCardSelect = () => {
-    console.log("card selected!");
-  };
 
   return (
     <section>
@@ -22,7 +18,8 @@ const Trips = () => {
           <li
             key={id}
             className={styles["trip-card"]}
-            onClick={handleCardSelect}
+            onClick={() => setSelectedTrip(id)}
+            data-selected={id === selectedTripId}
           >
             <img src={image} alt={city + " picture"} />
             <div className={styles["trip-card-description"]}>
