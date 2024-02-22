@@ -1,10 +1,10 @@
-import { useContext, useMemo } from "react";
+import { useContext } from "react";
 import { TripsContext } from "../../store/TripsContext";
 import Icon from "../UI/Icon";
+import Temp from "../UI/Temp";
 
 import useFetch from "../../hooks/useFetch";
 import getApiUrl from "../../utils/getApiUrl";
-import formatTemp from "../../utils/formatTemp";
 import getWeekday from "../../utils/getWeekday";
 import styles from "./forecast.module.css";
 
@@ -13,12 +13,7 @@ const initialData = {
 };
 
 const Forecast = () => {
-  const { trips, selectedTripId } = useContext(TripsContext);
-
-  const selectedTrip = useMemo(
-    () => trips.find((trip) => trip.id === selectedTripId),
-    [selectedTripId, trips]
-  );
+  const { selectedTrip } = useContext(TripsContext);
 
   const { data } = useFetch(getApiUrl(selectedTrip), undefined, initialData);
 
@@ -31,7 +26,7 @@ const Forecast = () => {
             <p className={styles.weekday}>{getWeekday(datetime)}</p>
             <Icon iconName={iconName} />
             <p>
-              {formatTemp(tempmax)}/{formatTemp(tempmin)}
+              {<Temp temp={tempmax} />}/{<Temp temp={tempmin} />}
             </p>
           </li>
         ))}

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 
 import { TripsContext } from "../../store/TripsContext";
 import NewTrip from "./NewTrip";
@@ -8,33 +8,38 @@ import formatDate from "../../utils/formatDate";
 import styles from "./trips.module.css";
 
 const Trips = () => {
-  const { trips, selectedTripId, setSelectedTrip } = useContext(TripsContext);
+  const { trips, selectedTrip, setSelectedTrip } = useContext(TripsContext);
   const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = useCallback(() => {
+    setShowModal(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setShowModal(false);
+  }, []);
 
   return (
     <section>
       <ul className={styles["trips-list"]}>
-        {trips.map(({ id, city, startDate, endDate, image }) => (
+        {trips.map((trip) => (
           <li
-            key={id}
+            key={trip.id}
             className={styles["trip-card"]}
-            onClick={() => setSelectedTrip(id)}
-            data-selected={id === selectedTripId}
+            onClick={() => setSelectedTrip(trip)}
+            data-selected={trip.id === selectedTrip.id}
           >
-            <img src={image} alt={city + " picture"} />
+            <img src={trip.image} alt={trip.city + " picture"} />
             <div className={styles["trip-card-description"]}>
-              <p className={styles["trip-card-city"]}>{city}</p>
+              <p className={styles["trip-card-city"]}>{trip.city}</p>
               <p className={styles["trip-card-period"]}>
-                {`${formatDate(startDate)} - ${formatDate(endDate)}`}
+                {`${formatDate(trip.startDate)} - ${formatDate(trip.endDate)}`}
               </p>
             </div>
           </li>
         ))}
-        <NewTrip onClick={() => setShowModal(true)} />
-        <CreateTripModal
-          isOpen={showModal}
-          closeModal={() => setShowModal(false)}
-        />
+        <NewTrip onClick={handleShowModal} />
+        <CreateTripModal isOpen={showModal} closeModal={handleCloseModal} />
       </ul>
     </section>
   );

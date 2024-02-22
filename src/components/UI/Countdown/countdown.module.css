@@ -1,0 +1,17 @@
+.countdown {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.datetime {
+  text-align: center;
+  gap: 10px;
+}
+
+.datetime time {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
