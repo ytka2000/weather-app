@@ -1,37 +1,32 @@
 import { createContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 
-import BerlinImage from "../mock/berlin.jpeg";
 import addDays from "../utils/addDate";
 
 const initialTrips = [
   {
     id: uuid(),
-    city: "Berlin",
+    city: "Rome",
     startDate: addDays(new Date(), 3),
     endDate: addDays(new Date(), 6),
-    image: BerlinImage,
   },
   {
     id: uuid(),
     city: "Berlin",
     startDate: addDays(new Date(), 4),
     endDate: addDays(new Date(), 8),
-    image: BerlinImage,
   },
   {
     id: uuid(),
-    city: "Berlin",
+    city: "Madrid",
     startDate: addDays(new Date(), 5),
     endDate: addDays(new Date(), 12),
-    image: BerlinImage,
   },
   {
     id: uuid(),
-    city: "Berlin",
+    city: "Kyiv",
     startDate: addDays(new Date(), 6),
     endDate: addDays(new Date(), 10),
-    image: BerlinImage,
   },
 ];
 
@@ -50,14 +45,9 @@ const TripsProvider = ({ children }) => {
     trips,
     selectedTrip,
     addTrip: (trip) => {
-      setTrips((prevTrips) => [
-        ...prevTrips,
-        { ...trip, id: uuid(), image: BerlinImage },
-      ]);
+      setTrips((prevTrips) => [...prevTrips, { ...trip, id: uuid() }]);
     },
-    setSelectedTrip: (trip) => {
-      setSelectedTrip(trip);
-    },
+    setSelectedTrip,
   };
 
   return (

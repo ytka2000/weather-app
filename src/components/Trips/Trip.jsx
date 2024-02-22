@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useCallback, useContext, useTransition } from "react";
 import { TripsContext } from "../../store/TripsContext";
 import useImage from "../../hooks/useImage";
 
@@ -8,12 +8,18 @@ import styles from "./trips.module.css";
 
 const Trip = ({ trip }) => {
   const { selectedTrip, setSelectedTrip } = useContext(TripsContext);
+  const [, startTransition] = useTransition();
   const { image } = useImage(trip.city);
+
+  const handleTripSelect = useCallback(
+    () => startTransition(() => setSelectedTrip(trip)),
+    [setSelectedTrip, trip]
+  );
 
   return (
     <li
       className={styles["trip-card"]}
-      onClick={() => setSelectedTrip(trip)}
+      onClick={handleTripSelect}
       data-selected={trip.id === selectedTrip.id}
     >
       <img src={image} alt={trip.city + " picture"} />

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef, useTransition } from "react";
 import { TripsContext } from "../../store/TripsContext";
 import DataList from "../UI/Input/DataList";
 import getTripName from "../../utils/getTripName";
@@ -8,6 +8,7 @@ import styles from "./searchbar.module.css";
 
 const SearchBar = () => {
   const { trips, selectedTrip, setSelectedTrip } = useContext(TripsContext);
+  const [, startTransition] = useTransition();
   const dataListRef = useRef();
 
   const list = useMemo(
@@ -27,7 +28,7 @@ const SearchBar = () => {
         (trip) => getTripName(trip) === e.target.value
       );
       if (selectedTrip) {
-        setSelectedTrip(selectedTrip);
+        startTransition(() => setSelectedTrip(selectedTrip));
       }
     }
   };
