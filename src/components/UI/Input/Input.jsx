@@ -7,6 +7,7 @@ const Input = ({
   type = "text",
   wrapper = "p",
   className = "",
+  icon,
   children,
   required,
   ...props
@@ -20,14 +21,29 @@ const Input = ({
           {label}
         </label>
       )}
-      <input
-        id={id}
-        name={name}
-        type={type}
-        className={styles.input}
-        required
-        {...props}
-      />
+      {icon ? (
+        <span className={styles["input-with-icon"]}>
+          {icon}
+          <input
+            id={id}
+            name={name}
+            type={type}
+            className={styles.input}
+            required
+            {...props}
+          />
+        </span>
+      ) : (
+        <input
+          id={id}
+          name={name}
+          type={type}
+          className={styles.input}
+          required
+          {...props}
+        />
+      )}
+
       {children}
     </Wrapper>
   );

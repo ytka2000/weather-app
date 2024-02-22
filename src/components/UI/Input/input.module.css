@@ -25,3 +25,22 @@
 .input::placeholder {
   color: var(--grey);
 }
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon .input {
+  box-sizing: border-box;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.input-with-icon :first-child {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+}

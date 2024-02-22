@@ -15,22 +15,22 @@ const initialTrips = [
   {
     id: uuid(),
     city: "Berlin",
-    startDate: addDays(new Date(), 3),
-    endDate: addDays(new Date(), 6),
+    startDate: addDays(new Date(), 4),
+    endDate: addDays(new Date(), 8),
     image: BerlinImage,
   },
   {
     id: uuid(),
     city: "Berlin",
-    startDate: addDays(new Date(), 3),
-    endDate: addDays(new Date(), 6),
+    startDate: addDays(new Date(), 5),
+    endDate: addDays(new Date(), 12),
     image: BerlinImage,
   },
   {
     id: uuid(),
     city: "Berlin",
-    startDate: addDays(new Date(), 3),
-    endDate: addDays(new Date(), 6),
+    startDate: addDays(new Date(), 6),
+    endDate: addDays(new Date(), 10),
     image: BerlinImage,
   },
 ];
