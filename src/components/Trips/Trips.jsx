@@ -22,6 +22,8 @@ const Trips = () => {
   return (
     <section>
       <ul className={styles["trips-list"]}>
+        <NewTrip onClick={handleShowModal} />
+        <CreateTripModal isOpen={showModal} closeModal={handleCloseModal} />
         {trips.map((trip) => (
           <li
             key={trip.id}
@@ -38,8 +40,6 @@ const Trips = () => {
             </div>
           </li>
         ))}
-        <NewTrip onClick={handleShowModal} />
-        <CreateTripModal isOpen={showModal} closeModal={handleCloseModal} />
       </ul>
     </section>
   );

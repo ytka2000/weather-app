@@ -1,7 +1,10 @@
 .trips-list {
   display: flex;
+  flex-wrap: nowrap;
   gap: 75px;
   list-style: none;
+  overflow-x: scroll;
+  padding: 2rem 2rem 2rem 0;
 }
 
 .trip-card {

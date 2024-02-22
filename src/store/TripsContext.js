@@ -2,20 +2,35 @@ import { createContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import BerlinImage from "../mock/berlin.jpeg";
+import addDays from "../utils/addDate";
 
 const initialTrips = [
   {
     id: uuid(),
     city: "Berlin",
-    startDate: new Date(),
-    endDate: new Date(),
+    startDate: addDays(new Date(), 3),
+    endDate: addDays(new Date(), 6),
     image: BerlinImage,
   },
   {
     id: uuid(),
     city: "Berlin",
-    startDate: new Date(),
-    endDate: new Date(),
+    startDate: addDays(new Date(), 3),
+    endDate: addDays(new Date(), 6),
+    image: BerlinImage,
+  },
+  {
+    id: uuid(),
+    city: "Berlin",
+    startDate: addDays(new Date(), 3),
+    endDate: addDays(new Date(), 6),
+    image: BerlinImage,
+  },
+  {
+    id: uuid(),
+    city: "Berlin",
+    startDate: addDays(new Date(), 3),
+    endDate: addDays(new Date(), 6),
     image: BerlinImage,
   },
 ];
