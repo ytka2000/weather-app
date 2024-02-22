@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useContext, useEffect, useMemo, useRef } from "react";
 import { TripsContext } from "../../store/TripsContext";
 import DataList from "../UI/Input/DataList";
 import getTripName from "../../utils/getTripName";
@@ -7,7 +7,8 @@ import searchIcon from "../../assets/search.png";
 import styles from "./searchbar.module.css";
 
 const SearchBar = () => {
-  const { trips, setSelectedTrip } = useContext(TripsContext);
+  const { trips, selectedTrip, setSelectedTrip } = useContext(TripsContext);
+  const dataListRef = useRef();
 
   const list = useMemo(
     () =>
@@ -31,9 +32,19 @@ const SearchBar = () => {
     }
   };
 
+  useEffect(() => {
+    const searchValue = dataListRef.current.searchBarValue;
+    const selectedTripName = getTripName(selectedTrip);
+
+    if (searchValue !== selectedTripName) {
+      dataListRef.current.reset();
+    }
+  }, [selectedTrip]);
+
   return (
     <section>
       <DataList
+        ref={dataListRef}
         id="trip-options"
         name="trip-options"
         options={list}
