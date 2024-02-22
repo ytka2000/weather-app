@@ -1,8 +1,11 @@
 import { useMemo } from "react";
 import formatTemp from "../../../utils/formatTemp";
 
-const Temp = ({ temp, short = true, className }) => {
-  const units = useMemo(() => formatTemp(temp).slice(-2), [temp]);
+const Temp = ({ temp: initialTemp, short = true, className }) => {
+  const formattedTemp = useMemo(() => formatTemp(initialTemp), [initialTemp]);
+
+  const temp = formattedTemp.slice(0, -2);
+  const units = formattedTemp.slice(-2);
 
   return (
     <span className={className}>

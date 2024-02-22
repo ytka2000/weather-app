@@ -1,6 +1,3 @@
-import { useMemo } from "react";
-import DataList from "./DataList";
-
 import styles from "./input.module.css";
 
 const Input = ({
@@ -9,25 +6,29 @@ const Input = ({
   label,
   type = "text",
   wrapper = "p",
-  list,
   className = "",
+  children,
+  required,
   ...props
 }) => {
   const Wrapper = wrapper;
 
-  const isDataList = useMemo(() => type === "datalist" && list, [list, type]);
-
   return (
     <Wrapper className={`${styles["input-wrapper"]} ${className}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label htmlFor={id} className={styles.label} data-required={required}>
+          {label}
+        </label>
+      )}
       <input
         id={id}
         name={name}
         type={type}
-        list={isDataList ? `${id}-list` : undefined}
+        className={styles.input}
+        required
         {...props}
       />
-      {isDataList && <DataList id={`${id}-list`} options={list} />}
+      {children}
     </Wrapper>
   );
 };

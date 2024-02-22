@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { TripsContext } from "../../store/TripsContext";
-import Input from "../UI/Input";
+import DataList from "../UI/Input/DataList";
 
 import formatDate from "../../utils/formatDate";
 import searchIcon from "../../assets/search.png";
@@ -21,11 +21,10 @@ const SearchBar = () => {
   return (
     <section>
       <img src={searchIcon} alt="Search icon" />
-      <Input
+      <DataList
         id="trip-options"
         name="trip-options"
-        type="datalist"
-        list={list}
+        options={list}
         placeholder="Search your trip"
         className={styles["search-bar"]}
       />

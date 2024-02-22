@@ -5,11 +5,16 @@
   width: 100%;
 }
 
-.input-wrapper label {
+.label {
   margin-bottom: 10px;
 }
 
-.input-wrapper input {
+.label[data-required]::before {
+  content: "* ";
+  color: red;
+}
+
+.input {
   border: 1px solid var(--grey);
   border-radius: 2px;
   padding: 10px;
@@ -17,6 +22,6 @@
   margin-bottom: 15px;
 }
 
-.input-wrapper input::placeholder {
+.input::placeholder {
   color: var(--grey);
 }
