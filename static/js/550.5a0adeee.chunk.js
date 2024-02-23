@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[550],{5550:(p,s,a)=>{p.exports=a.p+"static/media/hail.16d1d890c1fd70c7961c.svg"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[473],{4473:(p,e,a)=>{p.exports=a.p+"static/media/Ankara.b2b2ae8d65e814e5b47d.jpeg"}}]);

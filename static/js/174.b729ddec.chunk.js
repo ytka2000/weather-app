@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[174],{8174:(p,e,s)=>{p.exports=s.p+"static/media/wind.5195e076b638f307f894.svg"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[980],{3980:(p,a,e)=>{p.exports=e.p+"static/media/Warsaw.5fa9f6cfb41df5dc0a5d.jpeg"}}]);

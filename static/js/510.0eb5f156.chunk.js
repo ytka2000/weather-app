@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[510],{6510:(p,e,s)=>{p.exports=s.p+"static/media/Helsinki.ea3848b070464682f54e.jpeg"}}]);

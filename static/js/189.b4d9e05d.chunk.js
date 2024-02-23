@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[189],{6189:(p,s,e)=>{p.exports=e.p+"static/media/snow.addc1e8351b15d18b7bb.svg"}}]);

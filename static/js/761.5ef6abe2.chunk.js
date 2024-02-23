@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[761],{5761:(e,p,s)=>{e.exports=s.p+"static/media/sleet.0d240fe3a6eb4c822031.svg"}}]);

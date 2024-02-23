@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrip_app=self.webpackChunktrip_app||[]).push([[242],{6242:(e,p,s)=>{e.exports=s.p+"static/media/thunder.1f9fd4d2ee82c4c1e58c.svg"}}]);
