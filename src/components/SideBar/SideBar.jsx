@@ -11,7 +11,10 @@ const SideBar = () => {
   return (
     <aside className={styles["sidebar"]}>
       <WeatherToday city={selectedTrip.city} />
-      <Countdown targetTime={selectedTrip.startDate} />
+      <Countdown
+        targetTime={selectedTrip.startDate}
+        className={styles.countdown}
+      />
     </aside>
   );
 };
