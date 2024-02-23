@@ -2,6 +2,7 @@
   width: 30%;
   background-color: var(--grey);
   color: white;
+  overflow-x: hidden;
 }
 
 .weather-today {

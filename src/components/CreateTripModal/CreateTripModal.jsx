@@ -37,6 +37,8 @@ const CreateTripModal = ({ isOpen, closeModal }) => {
         ref={formRef}
         className={styles["create-trip-modal"]}
         onSubmit={handleFormSubmit}
+        autoComplete="off"
+        onKeyDown={(e) => e.preventDefault()}
       >
         <header>
           <div className={styles["create-trip-header"]}>
@@ -47,7 +49,7 @@ const CreateTripModal = ({ isOpen, closeModal }) => {
           </div>
           <Divider />
         </header>
-        <CreateTripInputs />
+        <CreateTripInputs key={isOpen ? 1 : 0} />
         <footer>
           <Divider />
           <div className={styles["button-group"]}>

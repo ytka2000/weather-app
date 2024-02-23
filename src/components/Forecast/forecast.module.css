@@ -1,8 +1,11 @@
 .forecast-items {
   list-style: none;
   display: flex;
+  flex-wrap: nowrap;
   gap: 50px;
+  overflow-x: scroll;
   padding: 40px 10px;
+  padding: 2rem 2rem 2rem 1rem;
 }
 
 .forecast-items li {

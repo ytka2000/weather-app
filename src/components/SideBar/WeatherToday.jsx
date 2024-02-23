@@ -18,7 +18,10 @@ const WeatherToday = ({ city }) => {
     data: { days },
   } = useFetch(apiUrl, undefined, initialData);
 
-  const weekDay = useMemo(() => getWeekday(days[0]?.datetime), [days]);
+  const weekDay = useMemo(
+    () => (days[0] ? getWeekday(days[0].datetime) : "..."),
+    [days]
+  );
 
   return (
     <div className={styles["weather-today"]}>
@@ -29,7 +32,7 @@ const WeatherToday = ({ city }) => {
           className={styles["weather-today-icon"]}
         />
         <Temp
-          temp={days[0]?.temp}
+          temp={days[0] ? days[0].temp : ""}
           short={false}
           className={styles["weather-today-temp"]}
         />
