@@ -13,3 +13,9 @@
 .search-bar input::placeholder {
   color: black;
 }
+
+@media (max-width: 450px) {
+  .search-bar {
+    width: 90%;
+  }
+}

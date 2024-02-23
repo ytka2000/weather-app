@@ -1,11 +1,12 @@
 #main {
   display: flex;
-  padding-left: 50px;
 }
 
 .main-content {
   width: 70%;
   overflow-x: hidden;
+  padding-left: 50px;
+  box-sizing: border-box;
 }
 
 section {
@@ -18,4 +19,19 @@ section:last-child {
 
 #main > section {
   margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+  section {
+    margin-bottom: 25px;
+  }
+
+  #main {
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+    padding-left: 25px;
+  }
 }

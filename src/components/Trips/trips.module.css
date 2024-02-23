@@ -61,3 +61,15 @@
   cursor: pointer;
   box-shadow: var(--grey) 0px 15px 20px -5px, var(--grey) 0px 10px 10px -5px;
 }
+
+@media (max-width: 1000px) {
+  .trips-list {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .trips-list {
+    gap: 25px;
+  }
+}
